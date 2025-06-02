@@ -1,6 +1,6 @@
 const usuarioCorrecto = 'admin';
 const contraseñaCorrecta = '1234';
-const texto = 'Bienvenido a Indumentaria Coder\n1. Ingresar Articulo\n2. Ver Articulos\n3. Buscar Articulo\n4. Eliminar Articulo\n5. Control de Stock\n7. Salir\n '
+const texto = 'Bienvenido a Indumentaria Coder\n1. Ingresar Articulo\n2. Ver Articulos\n3. Buscar Articulo\n4. Eliminar Articulo\n5. Control de Stock\n6. Salir\n '
 let bandera = true;
 let seLogeo = false;
 
@@ -162,7 +162,7 @@ function controlDeStock(id, stock){
                 let auxStock = Number(prompt('Ingrese el stock a agregar/quitar'));
                 controlDeStock(idAux3, auxStock);
                 break;
-            case 7:
+            case 6:
                 bandera = false;
                 break;           
         }
