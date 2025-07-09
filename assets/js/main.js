@@ -180,6 +180,8 @@ function ingresarArticulo() {
   console.log(listaProductos);
 
   localStorage.setItem("productos", JSON.stringify(listaProductos));
+
+  return objetoAuxiliar;
 }
 
 function creadoraDeCard() {
@@ -260,6 +262,13 @@ botonProducto.onclick = () => {
 
 botonDeAgregarProducto.onclick = (e) => {
   e.preventDefault();
-  document.getElementById("main-cards").innerHTML = "";
+  document.getElementById("products").innerHTML = "";
   ingresarArticulo();
+
+  nombreProducto.value = "";
+  precioProducto.value = "";
+  imagenProducto.value = "";
+  stockProducto.value = "";
+
+  creadoraDeCard();
 };

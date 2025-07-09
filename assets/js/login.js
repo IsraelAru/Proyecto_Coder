@@ -6,8 +6,6 @@ let user = document.getElementById("User");
 let password = document.getElementById("Password");
 let esAdmin = false;
 
-//boton.addEventListener("click", ingresoUsuario());
-
 boton.onclick = (e) => {
   e.preventDefault();
   ingresoUsuario();
