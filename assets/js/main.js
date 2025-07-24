@@ -195,9 +195,12 @@ function creadoraDeCard() {
       <div class="card-body">
         <h5 class="card-title">${element.nombre}</h5>
         <p class="card-text">
-          ${element.precio}
+          $${element.precio}
         </p>
-        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+        <p class="card-text">
+          ID:${element.id}
+        </p>
+        <a href="#" class="btn btn-primary" id="${element.id}" >Agregar al Carrito</a>
       </div>
     </div>`;
     body.appendChild(divProducto);
@@ -206,6 +209,21 @@ function creadoraDeCard() {
 
 let seLogeo = localStorage.getItem("admin");
 
+function dadoraDeEventosABoton() {
+  const HTMLElementsBotones =
+    document.getElementsByClassName("btn btn-primary");
+  const ArrayBotones = Array.from(HTMLElementsBotones);
+  ArrayBotones.forEach((boton) => {
+    boton.addEventListener("click", (e) => {
+      let producto = buscadoraDeProductos(e.target.id);
+      console.log(producto);
+    });
+  });
+}
+
+function buscadoraDeProductos(id) {
+  return listaProductos.find((el) => el.id == id);
+}
 if (!seLogeo) {
   alert("¡Debe iniciar sesión!");
   window.location = "../index.html";
@@ -272,3 +290,6 @@ botonDeAgregarProducto.onclick = (e) => {
 
   creadoraDeCard();
 };
+
+dadoraDeEventosABoton();
+const Carrito = [];
