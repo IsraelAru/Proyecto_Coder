@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aru Shop-Home</title>
+    <title>Aru Shop-Carrito</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href=".././assets/css/style.css" />
   </head>
-  <body id="body">
+  <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Aru Shop</a>
@@ -41,44 +41,15 @@
         </div>
       </div>
     </nav>
-    <h1 class="cards-title">Artículos</h1>
-    <button id="agregarProducto" class="btn btn-primary">Nuevo Producto</button>
 
-    <form id="formulario">
-      <div class="mb-3">
-        <label for="Product" class="form-label">Producto</label>
-        <input
-          type="text"
-          class="form-control"
-          id="nombre"
-          aria-describedby="ProductHelp"
-        />
-      </div>
-      <div class="mb-3">
-        <label for="Precio" class="form-label">Precio</label>
-        <input type="number" class="form-control" id="precio" />
-      </div>
-      <div class="mb-3">
-        <label for="Stock" class="form-label">Stock</label>
-        <input type="number" class="form-control" id="stock" />
-      </div>
-      <div class="mb-3">
-        <label for="image" class="form-label">Imagen URL</label>
-        <input type="text" class="form-control" id="image" />
-      </div>
-      <button id="botonAgregar" type="submit" class="btn btn-primary">
-        Agregar
+    <div class="main-cart">
+      <h1 class="cards-title">Carrito</h1>
+      <h4 id="total"></h4>
+      <div id="cart-container"></div>
+      <button id="confirma-compra" class="btn btn-primary">
+        Confirmar Compra
       </button>
-    </form>
-
-    <div id="products" class="main-cards"></div>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </div>
     <script src="../assets/js/main.js"></script>
   </body>
 </html>
