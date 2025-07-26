@@ -8,7 +8,7 @@ const precioProducto = document.getElementById("precio");
 const stockProducto = document.getElementById("stock");
 const cardContenido = document.getElementById("cart-container");
 
-const Carrito = [];
+const Carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 class Articulo {
   constructor(nombre, image, precio, stock) {
     this.id = idRand();
@@ -91,6 +91,7 @@ function buscadoraDeProductos(id) {
 
 function agregadoraACarrito(producto) {
   Carrito.push(producto);
+  localStorage.setItem("carrito", JSON.stringify(Carrito));
   creadoraDeCardsDeCarrito();
 }
 function creadoraDeCardsDeCarrito() {
